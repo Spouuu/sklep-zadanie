@@ -20,10 +20,16 @@ export class App {
   cart: any[] = [];
 
   addProductToCart(product: any) {
-    this.cart = [...this.cart, product];
+    this.cart = [
+      ...this.cart,
+      {
+        ...product,
+        cartId: Date.now() + Math.random()
+      }
+    ];
   }
 
   removeProductFromCart(product: any) {
-    this.cart = this.cart.filter(item => item.id !== product.id);
+    this.cart = this.cart.filter(item => item.cartId !== product.cartId);
   }
 }
