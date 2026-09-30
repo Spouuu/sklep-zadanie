@@ -20,7 +20,7 @@ export class App {
   cart: any[] = [];
 
   addProductToCart(product: any) {
-    this.cart.push(product);
+    this.cart = [...this.cart, product];
   }
 
   removeProductFromCart(product: any) {
